@@ -34,7 +34,6 @@ func main() {
 }
 
 func testNumber(conn net.Conn, number int64) error {
-	fmt.Printf("Yuborish: %d\n", number)
 
 	msg := tlv.NewNumberMessage(number)
 	if err := sendTLV(conn, msg); err != nil {
@@ -62,7 +61,6 @@ func testNumber(conn net.Conn, number int64) error {
 }
 
 func testString(conn net.Conn, text string) error {
-	fmt.Printf("Yuborish: %q\n", text)
 
 	msg := tlv.NewStringMessage(text)
 	if err := sendTLV(conn, msg); err != nil {
