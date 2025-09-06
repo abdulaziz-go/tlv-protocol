@@ -2,7 +2,7 @@ package tlv_test
 
 import (
 	"testing"
-	"tlv-protocol/internal/tlv"
+	"tlv-protocol/tlv"
 )
 
 func TestTlvMessagesEncoding(t *testing.T) {

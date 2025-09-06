@@ -5,7 +5,7 @@ import (
 	"log"
 	"net"
 	"syscall"
-	"tlv-protocol/internal/tlv"
+	"tlv-protocol/tlv"
 )
 
 type TLVServer struct {
@@ -83,7 +83,7 @@ func (s *TLVServer) Start() error {
 
 		fmt.Println(fmt.Sprintf("Yangi client ulandi: %s", client.addr))
 
-		go handleClient(client)
+		go s.handleClient(client)
 	}
 	return nil
 }
@@ -98,8 +98,59 @@ func (s *TLVServer) handleClient(client *Client) {
 	readBuffer := make([]byte, 4096)
 
 	for s.running {
-		
+		n, err := syscall.Read(client.fd, readBuffer)
+		if err != nil {
+			if err == syscall.EAGAIN || err == syscall.EWOULDBLOCK {
+				continue
+			}
+			log.Printf("Client %s dan o'qishda xatolik: %v", client.addr, err)
+			break
+		}
+
+		if n == 0 {
+			log.Printf("Client %s ulanishni yopdi", client.addr)
+			break
+		}
+
+		client.buffer = append(client.buffer, readBuffer[:n]...)
+
+		if err := s.processClientBuffer(client); err != nil {
+			log.Printf("Buffer processing error for client %s: %v", client.addr, err)
+			break
+		}
 	}
+}
+
+func (s *TLVServer) processClientBuffer(client *Client) error {
+	for len(client.buffer) >= 3 {
+		length := uint32(client.buffer[1]) | uint32(client.buffer[2])<<8
+		totalSize := 5 + int(length)
+
+		if len(client.buffer) < totalSize {
+			break
+		}
+
+		msg, err := tlv.Decode(client.buffer[:totalSize])
+		if err != nil {
+			return fmt.Errorf("decode error: %v", err)
+		}
+
+		log.Printf("Client %s dan message qabul qilindi: %s", client.addr, msg)
+
+		if handler, exists := s.handlers[msg.Type]; exists {
+			if err := handler(client, msg); err != nil {
+				log.Printf("Handler error for type %d: %v", msg.Type, err)
+			}
+		} else {
+			log.Printf("Handler topilmadi message type: %d", msg.Type)
+			response := tlv.NewStringMessage("Unknown message type")
+			client.SendTLV(response)
+		}
+
+		client.buffer = client.buffer[totalSize:]
+	}
+
+	return nil
 }
 
 func parseAddr(addr syscall.Sockaddr) net.Addr {

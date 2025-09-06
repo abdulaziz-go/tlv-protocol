@@ -2,20 +2,20 @@ package tlv_test
 
 import (
 	"testing"
-	"tlv-protocol/internal/tlv"
+	tlv2 "tlv-protocol/tlv"
 )
 
 func TestDecodeFunctions(t *testing.T) {
 	t.Run("Decode Number Message", func(t *testing.T) {
 		number := int64(12345678)
-		msg := tlv.NewNumberMessage(number)
+		msg := tlv2.NewNumberMessage(number)
 
 		buf, err := msg.Encode()
 		if err != nil {
 			t.Fatalf("Encode error: %v", err)
 		}
 
-		decoded, err := tlv.Decode(buf)
+		decoded, err := tlv2.Decode(buf)
 		if err != nil {
 			t.Fatalf("Decode error: %v", err)
 		}
@@ -32,14 +32,14 @@ func TestDecodeFunctions(t *testing.T) {
 
 	t.Run("Decode String Message", func(t *testing.T) {
 		text := "Hello world"
-		msg := tlv.NewStringMessage(text)
+		msg := tlv2.NewStringMessage(text)
 
 		buf, err := msg.Encode()
 		if err != nil {
 			t.Fatalf("Encode error: %v", err)
 		}
 
-		decoded, err := tlv.Decode(buf)
+		decoded, err := tlv2.Decode(buf)
 		if err != nil {
 			t.Fatalf("Decode error: %v", err)
 		}
@@ -56,14 +56,14 @@ func TestDecodeFunctions(t *testing.T) {
 
 	t.Run("Decode File Message", func(t *testing.T) {
 		fileData := []byte("File content here hello world")
-		msg := tlv.NewFileMessage(fileData)
+		msg := tlv2.NewFileMessage(fileData)
 
 		buf, err := msg.Encode()
 		if err != nil {
 			t.Fatalf("Encode error: %v", err)
 		}
 
-		decoded, err := tlv.Decode(buf)
+		decoded, err := tlv2.Decode(buf)
 		if err != nil {
 			t.Fatalf("Decode error: %v", err)
 		}
@@ -79,16 +79,16 @@ func TestDecodeFunctions(t *testing.T) {
 	})
 
 	t.Run("DecodeMultiple Messages", func(t *testing.T) {
-		msg1 := tlv.NewNumberMessage(42)
-		msg2 := tlv.NewStringMessage("Test")
-		msg3 := tlv.NewFileMessage([]byte("Data"))
+		msg1 := tlv2.NewNumberMessage(42)
+		msg2 := tlv2.NewStringMessage("Test")
+		msg3 := tlv2.NewFileMessage([]byte("Data"))
 
-		mulBytes, err := tlv.EncodeMultiple([]*tlv.TLVMessage{msg1, msg2, msg3})
+		mulBytes, err := tlv2.EncodeMultiple([]*tlv2.TLVMessage{msg1, msg2, msg3})
 		if err != nil {
 			t.Fatalf("Encode multiple error %v", err)
 		}
 
-		msgs, err := tlv.DecodeMultiple(mulBytes)
+		msgs, err := tlv2.DecodeMultiple(mulBytes)
 		if err != nil {
 			t.Fatalf("DecodeMultiple error: %v", err)
 		}
