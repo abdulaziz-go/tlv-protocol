@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"log"
 	"os"
 	"os/signal"
 	"syscall"
@@ -11,7 +10,7 @@ import (
 )
 
 func main() {
-	log.Println("=== TLV Protocol Server ===")
+	fmt.Println("=== TLV Protocol Server ===")
 
 	server := tcp.NewTlVServer(8080)
 	setupHandlers(server)
@@ -21,15 +20,15 @@ func main() {
 
 	go func() {
 		if err := server.Start(); err != nil {
-			log.Fatal("Server start error:", err)
+			panic(err)
 		}
 	}()
 
 	<-c
-	log.Println("Shutdown signal olindi...")
+	fmt.Println("Shutdown signal olindi...")
 
 	server.Stop()
-	log.Println("Server to'xtatildi")
+	fmt.Println("Server to'xtatildi")
 }
 
 func setupHandlers(server *tcp.TLVServer) {
@@ -43,7 +42,7 @@ func handleNumber(client *tcp.Client, msg *tlv.TLVMessage) error {
 	if err != nil {
 		return err
 	}
-	log.Printf("Number qabul qilindi: %d", number)
+	fmt.Printf("Number qabul qilindi: %d", number)
 
 	result := number * 2
 	response := tlv.NewNumberMessage(result)
@@ -52,7 +51,7 @@ func handleNumber(client *tcp.Client, msg *tlv.TLVMessage) error {
 		return err
 	}
 
-	log.Printf("Number response yuborildi: %d -> %d", number, result)
+	fmt.Printf("Number response yuborildi: %d -> %d", number, result)
 	return nil
 }
 
@@ -62,7 +61,7 @@ func handleString(client *tcp.Client, msg *tlv.TLVMessage) error {
 		return err
 	}
 
-	log.Printf("String qabul qilindi: %q", text)
+	fmt.Printf("String qabul qilindi: %q", text)
 
 	response := tlv.NewStringMessage("Echo: " + text)
 
@@ -70,7 +69,7 @@ func handleString(client *tcp.Client, msg *tlv.TLVMessage) error {
 		return err
 	}
 
-	log.Printf("String echo yuborildi: %q", text)
+	fmt.Printf("String echo yuborildi: %q", text)
 	return nil
 }
 
@@ -80,7 +79,7 @@ func handleFile(client *tcp.Client, msg *tlv.TLVMessage) error {
 		return err
 	}
 
-	log.Printf("File qabul qilindi: %d bytes", len(fileData))
+	fmt.Printf("File qabul qilindi: %d bytes", len(fileData))
 
 	info := fmt.Sprintf("File received: %d bytes",
 		len(fileData))
@@ -91,6 +90,6 @@ func handleFile(client *tcp.Client, msg *tlv.TLVMessage) error {
 		return err
 	}
 
-	log.Printf("File info response yuborildi")
+	fmt.Printf("File info response yuborildi")
 	return nil
 }
