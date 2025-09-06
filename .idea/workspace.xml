@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f1892115-e03d-49ff-9f77-6f7bdf93ec7b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/cmd/client/client.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmd/server/server.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/client/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/server/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/files.go" beforeDir="false" afterPath="$PROJECT_DIR$/files/files.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlv/encoder.go" beforeDir="false" afterPath="$PROJECT_DIR$/tlv/encoder.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlv/encoder_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/tlv/encoder_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlv/types.go" beforeDir="false" afterPath="$PROJECT_DIR$/tlv/types.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlv/validator.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/transport/tcp/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/transport/tcp/server.go" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" url="file://$USER_HOME$/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.25.0.darwin-arm64" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="32JIKzRMGV1tWwQWlNQ01b9bV6u" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultGoTemplateProperty": "Go File",
+    "Go Build.go build tlv-protocol/cmd.executor": "Run",
+    "Go Build.go build tlv-protocol/cmd/client.executor": "Run",
+    "Go Build.go build tlv-protocol/cmd/server.executor": "Run",
+    "Go Build.go build tlv-protocol/internal.executor": "Run",
+    "Go Test.TestDecodeFunctions in tlv-protocol/internal/tlv.executor": "Run",
+    "Go Test.TestDecodeFunctions/DecodeMultiple_Messages in tlv-protocol/internal/tlv.executor": "Run",
+    "Go Test.TestTLVMessage in tlv-protocol/internal/tlv.executor": "Run",
+    "Go Test.TestTLVMessage/NumberMessage in tlv-protocol/internal/tlv.executor": "Run",
+    "Go Test.TestTLVMessage/StringMessage in tlv-protocol/internal/tlv.executor": "Run",
+    "Go Test.TestTLVMessage/TypeValidation in tlv-protocol/internal/tlv.executor": "Run",
+    "Go Test.TestTlvMessagesEncoding/FileMessageEncode in tlv-protocol/internal/tlv.executor": "Run",
+    "Go Test.TestTlvMessagesEncoding/NumberMessageEncode in tlv-protocol/internal/tlv.executor": "Run",
+    "Go Test.TestTlvMessagesEncoding/StringMessageEncode in tlv-protocol/internal/tlv.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.GoLinterPluginOnboarding": "true",
+    "RunOnceActivity.GoLinterPluginStorageMigration": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "git-widget-placeholder": "main",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "last_opened_file_path": "/Users/abdulaziz/GolandProjects/tlv-protocol",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.configurations.included.in.services": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/cmd" />
+      <recent name="$PROJECT_DIR$/cmd/server" />
+      <recent name="$PROJECT_DIR$/cmd/client" />
+      <recent name="$PROJECT_DIR$/files" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="GoApplicationRunConfiguration" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Go Build.go build tlv-protocol/cmd/client">
+    <configuration name="go build tlv-protocol/cmd" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="tlv-protocol" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="tlv-protocol/cmd" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/cmd/server.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build tlv-protocol/cmd/client" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="tlv-protocol" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="tlv-protocol/cmd/client" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/cmd/client/client.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build tlv-protocol/cmd/server" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="tlv-protocol" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="tlv-protocol/cmd/server" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/cmd/server/server.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestDecodeFunctions in tlv-protocol/internal/tlv" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="tlv-protocol" />
+      <working_directory value="$PROJECT_DIR$/internal/tlv" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="tlv-protocol/internal/tlv" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestDecodeFunctions\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestDecodeFunctions/DecodeMultiple_Messages in tlv-protocol/internal/tlv" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="tlv-protocol" />
+      <working_directory value="$PROJECT_DIR$/internal/tlv" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="tlv-protocol/internal/tlv" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestDecodeFunctions\E$/^\QDecodeMultiple_Messages\E$" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build tlv-protocol/cmd/client" />
+        <item itemvalue="Go Build.go build tlv-protocol/cmd/server" />
+        <item itemvalue="Go Build.go build tlv-protocol/cmd" />
+        <item itemvalue="Go Test.TestDecodeFunctions in tlv-protocol/internal/tlv" />
+        <item itemvalue="Go Test.TestDecodeFunctions/DecodeMultiple_Messages in tlv-protocol/internal/tlv" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-gosdk-3b128438d3f6-07d2d2d66b1e-org.jetbrains.plugins.go.sharedIndexes.bundled-GO-251.26927.50" />
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-GO-251.26927.50" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f1892115-e03d-49ff-9f77-6f7bdf93ec7b" name="Changes" comment="" />
+      <created>1757132188564</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1757132188564</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VgoProject">
+    <settings-migrated>true</settings-migrated>
+  </component>
+</project>

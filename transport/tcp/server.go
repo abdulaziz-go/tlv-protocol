@@ -18,7 +18,7 @@ type TLVServer struct {
 
 type MessageHandler func(client *Client, msg *tlv.TLVMessage) error
 
-func NewTlSServer(port int) *TLVServer {
+func NewTlVServer(port int) *TLVServer {
 	return &TLVServer{
 		port:     port,
 		running:  false,
@@ -101,6 +101,7 @@ func (s *TLVServer) handleClient(client *Client) {
 		n, err := syscall.Read(client.fd, readBuffer)
 		if err != nil {
 			if err == syscall.EAGAIN || err == syscall.EWOULDBLOCK {
+				fmt.Println("syscall eagain e wouldblock detected")
 				continue
 			}
 			log.Printf("Client %s dan o'qishda xatolik: %v", client.addr, err)

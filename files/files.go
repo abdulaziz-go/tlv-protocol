@@ -23,12 +23,19 @@ func WriteFile(fd int, data []byte) error {
 	return err
 }
 
-func ReadFile(fd int, size int) (string, error) {
-	buffer := make([]byte, 0)
+func ReadFile(fd int, size int) ([]byte, error) {
+	buffer := make([]byte, size)
 	read, err := syscall.Read(fd, buffer)
 	if err != nil {
-		return "", err
+		return nil, err
 	}
+	return buffer[:read], nil
+}
 
-	return string(buffer[:read]), nil
+func GetFdAlreadyExistFile(filename string) (int, error) {
+	fd, err := syscall.Open(filename, syscall.O_RDONLY, 0)
+	if err != nil {
+		return -1, err
+	}
+	return fd, nil
 }

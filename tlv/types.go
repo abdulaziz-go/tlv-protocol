@@ -86,20 +86,3 @@ func (msg *TLVMessage) GetFileData() ([]byte, error) {
 
 	return msg.Value, nil
 }
-
-func (msg *TLVMessage) String() string {
-	var typeName string
-	switch msg.Type {
-	case TypeNumber:
-		typeName = "NUMBER"
-	case TypeString:
-		typeName = "STRING"
-	case TypeFile:
-		typeName = "FILE"
-	default:
-		typeName = fmt.Sprintf("UNKNOWN(%d)", msg.Type)
-	}
-
-	return fmt.Sprintf("TLV{Type:%s, Length:%d, ValueSize:%d}",
-		typeName, msg.Length, len(msg.Value))
-}
